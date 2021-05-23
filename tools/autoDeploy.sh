@@ -33,12 +33,11 @@ while (($int <= $2)); do
     sed -i "1c api-addr: :$newPort" $BeeYamlVersion
     sed -i "2c p2p-addr: :$((newPort + 1))" $BeeYamlVersion
     sed -i "3c debug-api-addr: :$((newPort + 2))" $BeeYamlVersion
-    echo "sed -i "4c password: \"$3\"" $BeeYamlVersion"
     sed -i "4c password: \"$3\"" $BeeYamlVersion
     sed -i "5c swap-endpoint: $4" $BeeYamlVersion
     # 启动
     sudo rm -rf output.log
-    sudo ../cmd/$EngineFile start --config ./$BeeYamlVersion > output.log &
+    sudo ../cmd/$6/$EngineFile start --config ./$BeeYamlVersion > output.log &
     # 输出地址
     if [ -d .bee ]; then
         echo "$int账户已创建"

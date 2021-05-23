@@ -42,5 +42,5 @@ tracing-enable: false
 tracing-endpoint: 127.0.0.1:6831
 tracing-service-name: bee
 transaction: ""
-verbosity: info
+verbosity: 5
 welcome-message: ""
